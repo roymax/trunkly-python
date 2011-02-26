@@ -7,16 +7,23 @@ Created by Roy on 2011-02-14.
 Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 """
 
-import json 
 import httplib2                
 from urllib import urlencode
-import sys
-
+import sys  
 reload(sys) 
 sys.setdefaultencoding("utf-8")
 
-TRUNK_API_HTTP='https://trunk.ly/api/v1'
-TRUNK_API_HTTPS='https://trunk.ly/api/v1'
+import platform
+
+    
+if platform.python_version() >= '2.6.0':
+	import json 
+else:
+	import simplejson as json  
+
+
+TRUNK_API_HTTP='https://trunkly.com/api/v1'
+TRUNK_API_HTTPS='https://trunkly.com/api/v1'
          
 
 HTTP_METHOD = ["GET", "POST", "PUT", "DELETE"]
